@@ -1,0 +1,36 @@
+<div class="container">
+    <nav class="navbar bg-light mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand">Meteo Api</a>
+            <button class="btn btn-outline-info" routerLink="/home">
+                Home
+            </button>
+        </div>
+    </nav>
+
+    <h2>Stats for latitude: {{lat2}} and longitude: {{lng2}} </h2>
+
+    <p></p>
+
+    <p>Il sole sorge alle: {{sunriseAndSunset.sunrise}}</p>
+    <p>Il sole tramonte alle: {{sunriseAndSunset.sunset}}</p>
+
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Ora</th>
+                <th scope="col">Temperatura</th>
+                <th scope="col">Precipitazione</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of weather">
+
+                <td>{{row.timepoint}}</td>
+                <td>{{row.temp2m}}</td>
+                <td>{{row.prec_type}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
